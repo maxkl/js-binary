@@ -1,0 +1,27 @@
+// test2.txt
+
+start:
+	movc 0 0xff
+	jmp @subroutine1
+
+subroutine2:
+	mov 1 0
+	pr 1
+	dec 1
+	pr 1
+	jmp @loop
+
+loop:
+	movc 2 0
+	loopStart:
+		inc 2
+		pr 2
+		jmpne 2 10 @loopStart
+	jmp @end
+
+subroutine1:
+	inc 0
+	pr 0
+	jmp @subroutine2
+
+end:

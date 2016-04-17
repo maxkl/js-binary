@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<title>Instruction Reference</title>
+		<style>
+			* {
+				box-sizing: border-box;
+			}
+
+			html, body {
+				margin: 0;
+				padding: 0;
+
+				font: 16px "Helvetica Neue", Helvetica, Arial, sans-serif;
+				color: #222;
+				background-color: #fff;
+			}
+
+			body {
+				margin: 0 auto;
+				width: 70%;
+			}
+
+			table {
+				margin: 0 auto;
+				width: 100%;
+
+				border-collapse: collapse;
+			}
+
+			table td,
+			table th {
+				padding: 3px 6px;
+
+				border: 1px solid #aaa;
+				vertical-align: top;
+			}
+
+			table th {
+				text-align: left;
+			}
+		</style>
+	</head>
+	<body>
+		<h1>Instruction Reference</h1>
+		<h3>Example (layout in the binary file):</h3>
+		<table>
+			<tr>
+				<td>Opcode</td>
+				<td colspan="3">Parameters</td>
+			</tr>
+			<tr style="font-weight: bold">
+				<td>07</td>
+				<td>01</td>
+				<td>FF</td>
+				<td>00</td>
+			</tr>
+			<tr>
+				<td>Opcode (JMPNE)</td>
+				<td>The register (R1)</td>
+				<td>The comparison value (255)</td>
+				<td>The address to jump to (00)</td>
+			</tr>
+		</table>
+		<h3>Instruction list</h3>
+		<table id="instructions">
+			<tr>
+				<th>Opcode</th>
+				<th>Mnemonic</th>
+				<th>Parameters</th>
+				<th>Description</th>
+			</tr>
+		</table>
+
+		<script src="js/util.js"></script>
+		<script src="js/Instructions.js"></script>
+		<script src="js/ref.js"></script>
+	</body>
+</html>

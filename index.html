@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<title>10101101</title>
+		<style>
+			pre {
+				padding: 5px 10px;
+
+				tab-size: 4;
+				background-color: #f8f8f8;
+				border: 1px solid #ddd;
+			}
+		</style>
+	</head>
+	<body>
+		<h3>Binary file:</h3>
+		<p>
+			<a href="ref.html" target="_blank">Instruction reference</a>
+		</p>
+		<input type="file" id="file-bin" accept=".hex, .bin" /><br />
+		<button id="run-bin">Run</button>
+		<br />
+		<h3>Text file:</h3>
+		<p>
+			Example file: <a href="programs/example.txt" download="example.txt">example.txt</a>
+		</p>
+		<input type="file" id="file-txt" accept=".txt" /><br />
+		<button id="download-txt">Compile & download as binary file</button><br />
+		<button id="run-txt">Compile & run</button><br />
+
+		<script src="js/util.js"></script>
+		<script src="js/Instructions.js"></script>
+		<script src="js/Processor.js"></script>
+		<script src="js/Parser.js"></script>
+		<script src="js/main.js"></script>
+	</body>
+</html>

@@ -1,0 +1,65 @@
+// example.txt
+// Comments begin with '//'
+
+// Instructions consist of the following:
+// - a mnemonic that represents an opcode (case insensitive) (e.g. MOV)
+// - zero or more parameters
+//    A parameter can be
+//    - a data byte (simply a number, e.g. '26' or '0xf4')
+//    - a register (also just a number, 0 means R0, 42 means R42, etc)
+//       there are 256 (R0 - R255) registers
+//    - an address (either a number or a reference to label, written as '@labelname')
+// Labels are written like 'labelname:'
+
+// Does nothing
+nop
+// Case doesn't matter
+nOP         // Comments can also be after an instruction
+
+// Store the value 255 into register 0 ('movc' means 'move constant')
+movc 0 0xff
+
+// Print the value of R0 to the console
+pr 0
+// All registers are initialized to 0 at program start
+pr 123
+
+// Copy R0 to R53
+mov 53 0
+
+// Print R53
+pr 53
+
+// Decrement R53
+dec 53
+
+// Print R53
+pr 53
+
+// Set R53 to 5
+movc 53 5
+
+// Define the label 'mylabel'
+mylabel:
+
+	// Print R53
+	pr 53
+
+	// Decrement R53
+	dec 53
+
+	// If R53 is not '0' jump back to 'mylabel'
+	jmpne 53 0 @mylabel
+
+// Jump to 'mysecondlabel'
+jmp @mysecondlabel
+
+// These instructions will never be executed
+pr 0
+pr 53
+
+mysecondlabel:
+	movc 53 127
+	pr 53
+
+// End of the program
