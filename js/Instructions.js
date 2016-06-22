@@ -8,7 +8,7 @@ var Instructions = (function () {
 
 	var T_CONST = 1,
 		T_REGISTER = 2,
-		T_ADRESS = 3;
+		T_ADDRESS = 3;
 
 	var instructions = [
 		{
@@ -85,7 +85,7 @@ var Instructions = (function () {
 			mnemonic: "jmp",
 			desc: "Continue program execution at a specific adress",
 			params: [
-				[T_ADRESS, "the adress at which to continue execution"]
+				[T_ADDRESS, "the adress at which to continue execution"]
 			],
 			fn: function (p) {
 				var addr = p.nextByte();
@@ -99,7 +99,7 @@ var Instructions = (function () {
 			params: [
 				[T_REGISTER, "the register"],
 				[T_CONST, "constant value"],
-				[T_ADRESS, "adress to jump to"]
+				[T_ADDRESS, "adress to jump to"]
 			],
 			fn: function (p) {
 				var reg = p.nextByte(),
@@ -123,7 +123,7 @@ var Instructions = (function () {
 		PARAM_TYPE: {
 			CONST: T_CONST,
 			REGISTER: T_REGISTER,
-			ADRESS: T_ADRESS
+			ADRESS: T_ADDRESS
 		},
 		informations: instructions.map(function (instr) {
 			return {
