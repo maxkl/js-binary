@@ -5,9 +5,9 @@
 
 (function () {
 	"use strict";
-	
+
 	var table = document.getElementById("instructions");
-	
+
 	var instructions = Instructions.informations;
 	var PTYPE = Instructions.PARAM_TYPE;
 
@@ -15,7 +15,7 @@
 		switch(type) {
 			case PTYPE.CONST: return "byte";
 			case PTYPE.REGISTER: return "register";
-			case PTYPE.ADRESS: return "address";
+			case PTYPE.ADDRESS: return "address";
 			default: return "*";
 		}
 	}
@@ -35,7 +35,7 @@
 		var tdHex = document.createElement("td");
 		tdHex.innerHTML = escapeHtml(padStart(hexCode.toString(16).toUpperCase(), 2, "0"));
 		tr.appendChild(tdHex);
-		
+
 		var tdMn = document.createElement("td");
 		tdMn.innerHTML = escapeHtml(instr.mnemonic.toUpperCase());
 		tr.appendChild(tdMn);
